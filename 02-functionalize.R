@@ -29,11 +29,11 @@ scrape_art_info <- function(x){
 }
 
 # load data to get links -------------------------------------------------------
-
-uoe_art <- read_csv("data/uoe_art.csv")
+setwd('C:/Data/GitHub/ds4p/ae09/')
+uoe_art <- read.csv("data/uoe-art.csv") ## typo
 
 # apply function ---------------------------------------------------------------
 
 scrape_art_info(uoe_art$link[1])
-scrape_art_info(___)
-scrape_art_info(___)
+scrape_art_info(uoe_art$link[2])
+scrape_art_info(uoe_art$link[3])

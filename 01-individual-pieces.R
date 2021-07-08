@@ -27,13 +27,35 @@ tibble(headers, values) %>%
   pivot_wider(names_from = headers, values_from = values) %>%
   add_column(link = first_info_url)
 
+##comments: pivot_wider()
 
 # second url --------------------------------------------------------------------
 
 ## set url ----
-second_info_url <- "___"
+second_info_url <- "https://collections.ed.ac.uk/art/record/21465?highlight=*:*"
 
-___
+## read page at url
+page2 <- read_html(second_info_url)
+
+##scrape headers
+
+headers2 <-page2 %>%
+  html_nodes("th") %>%
+  html_text()
+
+# scarpe values
+
+values2 <- page2 %>%
+  html_nodes("td") %>%
+  html_text() %>%
+  str_squish()
+
+# put together 
+
+tibble(headers2, values2) %>%
+  pivot_wider(names_from=headers2, values_from=values2) %>%
+  add_column(link=second_info_url)
+  
 
 
 # third url --------------------------------------------------------------------
