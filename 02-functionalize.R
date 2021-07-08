@@ -6,7 +6,7 @@ library(rvest)
 # function: scrape_art_info() --------------------------------------------------
 
 scrape_art_info <- function(x){
-
+Sys.sleep((1))
   # read page at url ----
   page <- read_html(x)
   
